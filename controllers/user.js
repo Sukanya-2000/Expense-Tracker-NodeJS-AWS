@@ -43,18 +43,20 @@ const login = async (req,res)=>{
     return res.status(400).json({success: false, message: `Email and password is missing`})
   }
   const user = await User.findAll( {where : {email}})
+  console.log(user);
     if(user.length>0){
       bcrypt.compare(password,user[0].password, (err,response)=>{
         if(err){
          throw new Error(`Something went wrong`)
         }
         if(response){
-          // res.redirect('/public/index');
-          res.status(200).json({success: true, message:`User Logged in succesfully`, token: generateAcessToken(user[0].id, user[0].name)})
+          console.log("hello");
+          res.status(200).json({success: true, message:`User Logged in succesfully`, token: generateAccessToken(user[0].id, user[0].name,user[0].ispremiumuser)})
         }else{
           return res.status(400).json({success: false, message: `Password is incorrect`})
         }
-      }) 
+      })
+      
     }else{
       return res.status(400).json({success: false, message: `User not found`})
     }
@@ -63,13 +65,14 @@ const login = async (req,res)=>{
   }
 }
 
-function generateAcessToken(id,name){
-  return jwt.sign({userId: id , name:name },'secretkey')
+function generateAccessToken(id,name,ispremiumuser){ 
+  return jwt.sign({userId: id , name:name, ispremiumuser },'sukanya333')
 }
 
 module.exports = {
   signupPage,
   signup,
   loginPage,
-  login
+  login,
+  generateAccessToken
 };

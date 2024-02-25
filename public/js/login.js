@@ -6,10 +6,11 @@ function login(e) {
       email: e.target.email.value,
       password: e.target.password.value
   }
-  console.log(loginDetails)
-  axios.post('http://localhost:3000/user/login',loginDetails).then(response => {
-          alert(response.data.message)
-          //console.log(response.data)
+  console.log(loginDetails);
+  axios.post('/login',loginDetails).then(response => {
+
+         // alert(response.data.message)
+          console.log(response.data)
           localStorage.setItem('token',response.data.token)
           window.location.href = "/expense/index"
   }).catch(err => {

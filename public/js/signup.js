@@ -7,14 +7,14 @@ async function signup(e){
             email: e.target.email.value,
             password: e.target.password.value
         }
-        // console.log(signupDetails)
-        const response = await axios.post('http://localhost:3000/user/signup', signupDetails)
+        console.log(signupDetails)
+        const response = await axios.post('/signup', signupDetails)
         if (response.status >= 200 && response.status < 300) {
-            window.location.href = "/user/login"
+            window.location.href = "/login"
         } else {
             throw new Error('Failed to login')
         }
     } catch (error) {
-        document.body.innerHTML += `<div style="color:red;">${error} <div>`;
+        console.log(error);
     }
 }
