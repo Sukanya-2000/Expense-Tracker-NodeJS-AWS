@@ -1,0 +1,96 @@
+body {
+    background-image: url('../images/bg.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    padding: 5rem;
+    margin-bottom: 2rem;
+    transition: background-color 0.1s ease;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.548); /* Adjust the alpha value for transparency */
+    border-radius: 0%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; /* Adjusted padding */
+    max-width: 700px; /* Adjusted max-width */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jumbotron {
+    background-color: #ff0080; 
+    color: #fff;
+    padding: 2.5rem; /* Adjusted padding */
+    text-align: center;
+    margin-bottom: 2.5rem; /* Adjusted margin-bottom */
+    font-size: 2rem; /* Adjusted font size */
+    size: 30%;
+}
+
+form {
+    max-width: 300px; /* Adjusted max-width */
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+    padding: 15px; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem; /* Adjusted margin-bottom */
+    margin-top: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button {
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ee0a74; 
+}
+
+.mt-5 {
+    margin-top: 20px; /* Adjusted margin-top */
+    max-width: 300px; /* Adjusted max-width */
+    font-size: 1.5rem; /* Adjusted font size */
+}
+
+.list-group {
+    max-width: 300px; /* Adjusted max-width */
+    margin: auto;
+}
+
+#pagination {
+    display: flex;
+    gap: 10px; 
+}
+
+.pagination-btn {
+    flex: 1; 
+    cursor: pointer;
+}
+
+.pagination-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
