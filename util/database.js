@@ -1,11 +1,12 @@
 const Sequelize = require("sequelize");
+require('dotenv').config();
 const sequelize = new Sequelize(
-  "expense_tracker",
-  "root",
-  "sukanya",
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    dialect: "mysql",
-    host: "localhost",
+    dialect: 'mysql',
+    host: process.env.HOST,
     logging: false
   }
 );
