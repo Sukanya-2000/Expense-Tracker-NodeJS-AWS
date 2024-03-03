@@ -94,7 +94,7 @@ const deleteExpense = async (req,res)=>{
 }
 
 function uploadToS3(data , filename){
-    const BUCKET_NAME = "expensetrackersukanya";
+    const BUCKET_NAME = process.env.BUCKET;
     const IAM_USER_KEY = process.env.AWS_KEY;
     const IAM_USER_SECRET = process.env.AWS_SECRET;
     let s3bucket = new AWS.S3({
